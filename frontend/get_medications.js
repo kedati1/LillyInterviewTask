@@ -9,12 +9,10 @@ xhttpr.onload = () => {
         const table = document.getElementById("medicine_contents");
         response.medicines.forEach(item => {
             let row = table.insertRow();
-            let date = row.insertCell(0);
-            date.innerHTML = item.name;
-            let name = row.insertCell(1);
-            name.innerHTML = item.price;
+            let name = row.insertCell(0);
+            name.innerHTML = item.name;
+            let price = row.insertCell(1);
+            price.innerHTML = item.price;
         })
-    } else {
-        // Handle error
     }
 };
