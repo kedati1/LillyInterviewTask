@@ -155,7 +155,7 @@ def get_average_price():
         return "%.2f" % average_price
 
 
-# Removes medicine from data that's invalid
+# Only returns medicine with valid information
 @app.get("/all_valid_medications")
 def clean_up_medicine():
     data = get_all_meds()

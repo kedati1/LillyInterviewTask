@@ -8,7 +8,6 @@ function create_medication(name, price) {
     const body= new FormData(form)
     xhttpr.onload = () => {
         if (xhttpr.status === 200) {
-            const response = JSON.parse(xhttpr.response);
             // Process the response data here
             const table = document.getElementById("medicine_contents");
             let row = table.insertRow();

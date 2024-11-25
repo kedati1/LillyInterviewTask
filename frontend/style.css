@@ -12,7 +12,7 @@ body {
     padding: 0;
     margin: 0;
     color: #333;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 /* Disclaimer styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
@@ -29,4 +29,17 @@ body {
     height: 30px;
 }
 
+
 /* ---- Your custom styles below ---- */
+
+#title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+#medicine_table td{
+    text-align: right;
+    padding-right: 10px;
+}

@@ -11,8 +11,21 @@ xhttpr.onload = () => {
             let row = table.insertRow();
             let name = row.insertCell(0);
             name.innerHTML = item.name;
+
             let price = row.insertCell(1);
-            price.innerHTML = item.price;
+            let price_container = document.createElement('span')
+            let currency_symbol = document.createElement('span')
+            let medicine_value = document.createElement('span')
+
+            currency_symbol.classList.add('currency_symbol')
+            currency_symbol.innerHTML = "£"
+
+            medicine_value.classList.add('medicine_value')
+            medicine_value.innerHTML = parseFloat(item.price).toFixed(2);
+
+            price_container.appendChild(currency_symbol)
+            price_container.appendChild(medicine_value)
+            price.appendChild(price_container)
         })
     }
 };
