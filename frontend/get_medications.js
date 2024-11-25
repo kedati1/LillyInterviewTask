@@ -26,6 +26,14 @@ xhttpr.onload = () => {
             price_container.appendChild(currency_symbol)
             price_container.appendChild(medicine_value)
             price.appendChild(price_container)
+
+            let buttonCell = row.insertCell(2)
+            let button = document.createElement('button')
+            button.textContent = 'Delete Medication'
+            button.onclick = () => {
+                alert(item.name)
+            }
+            buttonCell.appendChild(button);
         })
     }
 };
