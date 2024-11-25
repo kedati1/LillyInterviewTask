@@ -1,23 +1,24 @@
 function create_medication(name, price) {
-    if (name == null || name.len < 1 || price == null || price < 0) {
+    // Validation to ensure that it's valid
+    if (!name || name.len < 1 || price == null || price <= 0) {
         return
     }
     const xhttpr = new XMLHttpRequest();
     xhttpr.open('POST', 'http://localhost:8000/create', true);
-    const form = document.getElementById("create_medication");
-    const body= new FormData(form)
+    const formData = new FormData()
+    formData.append("name", name)
+    formData.append("price", price)
+
     xhttpr.onload = () => {
         if (xhttpr.status === 200) {
-            // Process the response data here
-            const table = document.getElementById("medicine_contents");
-            let row = table.insertRow();
-            let name_cell = row.insertCell(0);
-            name_cell.innerHTML = name;
-            let price_cell = row.insertCell(1);
-            price_cell.innerHTML = price;
+            //Force Reload the page to regenerate the table with the new field.
+            window.location.reload()
         } else {
-            // Handle error
+            const response = JSON.parse(xhttpr.response);
+            // Extracts only the msg portion of this response:
+            //{"detail":[{"type":"float_parsing","loc":["body","price"],"msg":"Input should be a valid number, unable to parse string as a number","input":"foo"}]}
+            alert(response.detail[0].msg);
         }
     };
-    xhttpr.send(body);
+    xhttpr.send(formData);
 }
