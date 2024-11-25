@@ -129,6 +129,7 @@ def delete_med(name: str = Form(...)):
 def get_average_price():
     """
     This function calculates the average price among all the medication within the database
+    (Only uses the valid medication within its calculation. Default JSON file has 9 medicines, but 2 have errors so they're not included.)
     Returns:
         dict: A dictionary containing the average price for the database
     """
@@ -155,9 +156,14 @@ def get_average_price():
         return "%.2f" % average_price
 
 
-# Removes medicine from data that's invalid
+# Only returns medicine with valid information
 @app.get("/all_valid_medications")
 def clean_up_medicine():
+    """
+    This function retrieves all the medicine, then iterates through them and only returns the valid ones.
+    Returns:
+        dict: contains all the valid medicines
+    """
     data = get_all_meds()
     new_data = []
     for med in data['medicines']:

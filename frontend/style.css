@@ -12,7 +12,7 @@ body {
     padding: 0;
     margin: 0;
     color: #333;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 /* Disclaimer styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
@@ -30,3 +30,52 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+
+#title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+/* Styling the table */
+.medicine_table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 0px;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Styling table headers */
+.medicine_table th {
+    background-color: deepskyblue;
+    color: white;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+/* Styling table rows */
+.medicine_table td {
+    padding: 10px 15px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+/* Styling the price section in the table */
+span {
+    display: inline-flex;
+    align-items: center; /* Center items vertically within the span */
+}
+
+/* Style the currency symbol (pound symbol) */
+.currency_symbol {
+    margin-right: 5px; /* Add space between the pound symbol and the price */
+}
+
+/* Style the value of the medicine */
+.medicine_value {
+    text-align: left;
+    font-weight: bold; /* Make the price value stand out */
+}

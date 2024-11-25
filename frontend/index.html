@@ -7,33 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="disclaimer" id="disclaimer">
-        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
-    </div>
-    <header>
-        <h1>Medicine Tracker</h1>
-    </header>
-    <main>
-        <table id="medicine_table" class="table table-borderless table-striped table-earning">
-            <thead>
-            <tr>
-                <th>Medicine Name</th>
-                <th>Price</th>
-            </tr>
-            </thead>
-            <tbody id="medicine_contents"></tbody>
-        </table>
-        <form id="create_medication" action="">
-            <label for="med_name">Medication Name</label><br>
-            <input type="text" id="med_name" name="name"><br>
+<div class="disclaimer" id="disclaimer">
+    Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real
+    medicine(s).
+</div>
+<header>
+    <h1 id="title">Medicine Tracker</h1>
+</header>
+<main>
+    <table class="medicine_table">
+        <thead>
+        <tr>
+            <th>Medicine Name</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody class="medicine_information" id="medicine_contents"></tbody>
+    </table>
+    <form id="create_medication" action="">
+        <label for="med_name">Medication Name</label><br>
+        <input type="text" id="med_name" name="name"><br>
 
-            <label for="med_price">Medication Price</label><br>
-            <input type="text" id="med_price" name="price" value=""><br>
+        <label for="med_price">Medication Price</label><br>
+        <input type="text" id="med_price" name="price" value=""><br>
 
-            <input type="button" form="create_medication" value="Create Medication" onclick="create_medication(med_name.value, med_price.value)">
-        </form>
-    </main>
+        <input type="button" form="create_medication" value="Create Medication"
+               onclick="create_medication(med_name.value, med_price.value)">
+    </form>
+</main>
 <script src="get_medications.js"></script>
 <script src="create_medications.js"></script>
+<script>
+    getMedicines()
+</script>
 </body>
 </html>
